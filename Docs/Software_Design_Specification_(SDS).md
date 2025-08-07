@@ -118,7 +118,7 @@ The program is designed for terminal-based use and avoids GUI dependencies. Each
 | `principal`   | `float`| Loan amount             |
 | `rate`   | `float`| Interest rate per period             |
 | `duration`   | `float`| Length of loan             |
-| `compounding`   | `float`| compounding frequency per year             |
+| `compounding_per_year`   | `float`| compounding frequency per year             |
 
 | Method                    | Description                                         |
 |---------------------------|-----------------------------------------------------|
