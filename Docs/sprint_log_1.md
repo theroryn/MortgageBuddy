@@ -75,5 +75,4 @@ To implement the core object-oriented structure of the MortgageBuddy app, includ
 - Implement file saving and loading of loan sessions (JSON or text format)
 - Introduce a menu-based CLI to improve user interaction
 - Explore adding a basic user authentication check
-- Write unit tests for `Loan` and validation logic using `unittest`
 - Start refining user prompts and output layout for professionalism
