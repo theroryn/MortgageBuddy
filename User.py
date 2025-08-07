@@ -1,4 +1,3 @@
-# user.py
 class User:
     def __init__(self, name, employee_id):
         self.name = name.strip()

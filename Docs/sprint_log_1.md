@@ -58,7 +58,7 @@ To implement the core object-oriented structure of the MortgageBuddy app, includ
 - `user.py`, `loan.py`, `calculator.py`, and `main.py`added
 - Commits made for each major class and test milestone
 - `.gitignore` configured to exclude cache, environment files
-- Pushed to a private GitHub repository using Github CLI
+- Pushed to a private GitHub repository using VS-Code Source Control
 
 ---
 
