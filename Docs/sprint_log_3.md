@@ -25,7 +25,8 @@ To finalize the **MortgageBuddy** application by implementing user authenticatio
 - Sprint 2 codebase: The foundation for adding new features.
 - Software Design Specification (SDS): Used as the blueprint for Sprint 3 features.
 - AI assistance: Utilized for best practices in improving documentation.
-    - Fixing and identifying bugs in code
+    - Fixing and identifying bugs in code.
+    - Identifying inconsistencies in documentation.
 ***
 
 ## Testing log
