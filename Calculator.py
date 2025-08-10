@@ -41,7 +41,7 @@ class Calculator:
     # Save loan data to text file
     def save_loan(self, loan):
         with open("loan_data.txt", "w") as f:
-            f.write(f"{loan.principal},{loan.annual_rate},{loan.term_years},{loan.compounding_per_year}")
+            f.write(f"{loan.principal},{loan.annual_rate},{loan.duration},{loan.compounding_per_year}")
         print("Loan data saved successfully to loan_data.txt")
 
     # Load loan data from text file
@@ -51,9 +51,9 @@ class Calculator:
                 data = f.read().strip().split(",")
                 principal = float(data[0])
                 annual_rate = float(data[1])
-                term_years = float(data[2])
+                duration = float(data[2])
                 compounding_per_year = int(data[3])
-                return Loan(principal, annual_rate, term_years, compounding_per_year)
+                return Loan(principal, annual_rate, duration, compounding_per_year)
         except FileNotFoundError:
             print("No saved loan data found.")
             return None
@@ -75,7 +75,8 @@ class Calculator:
             elif choice == "2":
                 loan = self.load_loan()
                 if loan:
-                    print(f"\nAmount Due After Interest: ${loan.total_due():.2f}")
+                    print("\n--- Last Saved Loan Details ---")
+                    print(f"Amount Due After Interest: ${loan.total_due():.2f}")
                     print(f"Total Interest Accrued:   ${loan.total_interest():.2f}")
             elif choice == "3":
                 print("Exiting MortgageBuddy. Goodbye!")
@@ -88,16 +89,16 @@ class Calculator:
         print("\n--- Mortgage Compound Interest Calculator ---")
 
         principal = self.get_positive_float("Enter principal loan amount ($): ")
-        rate = self.get_non_negative_float("Enter annual interest rate (%): ")
-        term = self.get_positive_float("Enter loan term (years): ")
+        annual_rate = self.get_non_negative_float("Enter annual interest rate (%): ")
+        duration = self.get_positive_float("Enter loan term (years): ")
         compounding = self.get_positive_int("Enter compounding frequency per year (e.g., 12 for monthly): ")
 
-        loan = Loan(principal, rate, term, compounding)
+        loan = Loan(principal, annual_rate, duration, compounding)
 
         print("\n--- Calculation Results ---")
         print(f"Amount Due After Interest: ${loan.total_due():.2f}")
         print(f"Total Interest Accrued:   ${loan.total_interest():.2f}")
 
-        save_choice = input("Would you like to save this loan? (y/n): ").strip().lower()
+        save_choice = input("\nWould you like to save this loan? (y/n): ").strip().lower()
         if save_choice == "y":
             self.save_loan(loan)

@@ -2,10 +2,14 @@ from User import User
 from Calculator import Calculator
 
 if __name__ == "__main__":
-    print("=== MortgageBuddy - Sprint 2 ===")  # Updated version
-    name = input("Enter your name: ")
-    employee_id = input("Enter your employee ID: ")
-    user = User(name, employee_id)
-
-    app = Calculator(user)
-    app.menu()  # Use menu-based CLI
+    print("=== MortgageBuddy - Final Version ===")
+    
+    # Authenticate the user
+    user = User.authenticate()
+    
+    if user:
+        print(f"\nAccess granted. Welcome, {user.name}!")
+        app = Calculator(user)
+        app.menu()
+    else:
+        print("\nAccess denied. Invalid name or employee ID.")

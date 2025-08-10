@@ -185,7 +185,6 @@ The program is designed for terminal-based use and avoids GUI dependencies. Each
 
 ## Sprint 3 – Finalisation and Optional Features
 - Optional: Add user authentication by verifying name and ID from a stored list
-- Add automated tests for `Loan` and input functions using `unittest` or `pytest`
 - Write documentation (README, inline comments, and docstrings)
 - Polish command-line output formatting and user feedback messages
 
