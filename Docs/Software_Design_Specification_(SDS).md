@@ -109,21 +109,24 @@ The program is designed for terminal-based use and avoids GUI dependencies. Each
 
 | Method              | Description                                |
 |---------------------|--------------------------------------------|
-| `display_info()`   | Prints a short user introduction               |
+| `display_info()`   | Prints a short user introduction.               |
+| `authenticate()`   | (Static) Handles user login by checking credentials against `users.txt`. |
+| `load_users()`     | (Static) Loads authorized users from `users.txt`. |
+
 
 ### Loan
 
 | Attribute | Type        | Description                                |
 |-----------|-------------|--------------------------------------------|
-| `principal`   | `float`| Loan amount             |
-| `rate`   | `float`| Interest rate per period             |
-| `duration`   | `float`| Length of loan             |
-| `compounding_per_year`   | `float`| compounding frequency per year             |
+| `principal`   | `float`| Loan amount.             |
+| `annual_rate`   | `float`| Annual interest rate as a percentage.             |
+| `duration`   | `float`| Length of loan in years.             |
+| `compounding_per_year`   | `int`| Number of times interest is compounded per year.             |
 
 | Method                    | Description                                         |
 |---------------------------|-----------------------------------------------------|
-| `total_due()`          | Calculates total amount including interest payable                       |
-| `total_interest()`            | calculates interest payable                       |
+| `total_due()`          | Calculates total amount including interest payable.                       |
+| `total_interest()`            | Calculates total interest payable.                       |
 
 
 
@@ -131,12 +134,14 @@ The program is designed for terminal-based use and avoids GUI dependencies. Each
 
 | Attribute | Type        | Description                                |
 |-----------|-------------|--------------------------------------------|
-| `user`   | `str`| user id and name             |
+| `user`   | `User Object`| The authenticated User object for the current session.             |
 
 | Method                    | Description                                         |
 |---------------------------|-----------------------------------------------------|
-| `run()`          | runs main process, being able to handle user '1 D 10 T' errors                       |
-
+| `run()`          | Runs the process for a single new loan calculation. Handles user input and displays results.                       |
+| `menu()`         | Displays the main command-line menu and handles user navigation. |
+| `save_loan()`    | Saves the current loan's data to `loan_data.txt`. |
+| `load_loan()`    | Loads loan data from `loan_data.txt` and creates a Loan object. |
 
 
 ## Assumptions and constraints
@@ -185,7 +190,6 @@ The program is designed for terminal-based use and avoids GUI dependencies. Each
 
 ## Sprint 3 – Finalisation and Optional Features
 - Optional: Add user authentication by verifying name and ID from a stored list
-- Write documentation (README, inline comments, and docstrings)
 - Polish command-line output formatting and user feedback messages
 
 
